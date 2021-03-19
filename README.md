@@ -3,7 +3,7 @@
 ## Data structure and Algorithm
 
 - [Detecting first and all non-repeating characters](./NonRepeating/README.md)
-- Heap sort
+- [Heap sort](./HeapSort/README.md)
 - Binary search tree
 - Dobully linked tree
 - Link list

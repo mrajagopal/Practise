@@ -4,7 +4,7 @@
 
 #### About
 
-The question came from an Amazon interview question described in [YouTube video](https://www.youtube.com/watch?v=5co5Gvp_-S0).
+The question came from an Amazon interview described in [YouTube video](https://www.youtube.com/watch?v=5co5Gvp_-S0).
 
 #### Problem description
 
