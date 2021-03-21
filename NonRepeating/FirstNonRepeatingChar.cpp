@@ -11,7 +11,7 @@ char find(std::vector<char> v)
 
   for(int i = 1; i < v.size(); i++)
   {
-    if (v[i] != v[i-1])
+    if ((v[i] != v[i-1]) && (v[i] != v[i+1]))
     return v[i];
   }
   return '\0';
