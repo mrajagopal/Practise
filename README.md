@@ -4,14 +4,14 @@
 
 - [Detecting first and all non-repeating characters](./NonRepeating/README.md)
 - [Heap sort](./HeapSort/README.md)
+- [Radix sort](./RadixSort/README.md)
+- [Bubble sort](./BubbleSort/README.md)
 - Binary search tree
 - Dobully linked tree
 - Link list
 - Skip list
 - Preventing loop
 - encryption algorithms (coding)
-- Radix sort
-- Bubble sort
 - Stack
 - Removing duplicates using SET
 - Search in sorted & rotated array
