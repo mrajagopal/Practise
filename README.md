@@ -2,10 +2,10 @@
 
 ## Data structure and Algorithm
 
-- [Detecting first and all non-repeating characters](./NonRepeating/README.md)
-- [Heap sort](./HeapSort/README.md)
-- [Radix sort](./RadixSort/README.md)
-- [Bubble sort](./BubbleSort/README.md)
+- [Detecting first and all non-repeating characters](./NonRepeating/README.md) ... 2021-03-22
+- [Heap sort](./HeapSort/README.md) ... 2021-03-22
+- [Radix sort](./RadixSort/README.md) ... 2021-03-29
+- [Bubble sort](./BubbleSort/README.md) ... 2021-03-29
 - Binary search tree
 - Dobully linked tree
 - Link list
@@ -16,6 +16,10 @@
 - Removing duplicates using SET
 - Search in sorted & rotated array
 - Quick sort
+
+## Other codes
+
+- [Utils](./Utils/README.md) - Utilities used in the above codes.
 
 ## References
 

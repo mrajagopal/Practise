@@ -1,12 +1,10 @@
 #!/usr/bin/env python
-# 2021-03-08 - Heaps, man. Using python's heapq module.
+# 2021-03-08: Heaps, man. Using python's heapq module.
+# 2021-03-21: Packaged random_array
 
-import heapq;
-import random;
-
-### Generate a list of 'max' elements with random numbers in [0, max)Random array for test
-def random_array(max=15):
-    return [random.randrange(max) for num in range(max)]      
+import heapq
+import random
+import Utils
 
 ### Heap-sort using Python's heappop and append
 # Actually, heapify itself does not sort the elements.
@@ -22,7 +20,7 @@ def sort_by_python(data):
 
 
 if __name__ == '__main__':
-    rand = random_array()
+    rand = Utils.random_array(15, 15)
     print('Random:    %s' % rand)
     print('by Python: %s' % sort_by_python(rand))
 

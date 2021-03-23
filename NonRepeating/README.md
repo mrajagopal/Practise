@@ -4,7 +4,7 @@
 
 #### About
 
-The question came from an Amazon interview described in [YouTube video](https://www.youtube.com/watch?v=5co5Gvp_-S0).
+The question came from an Amazon interview.
 
 #### Problem description
 
@@ -24,3 +24,7 @@ First/non-sequential | `b` | `a` | `a`
 First/independent | `d` | `c` | None
 All/non-sequential | `b, d, b` | `a, b, c, d` | `a, b, c`
 All/independent | `d` | `c, d` | None
+
+#### References
+
+- [YouTube video](https://www.youtube.com/watch?v=5co5Gvp_-S0).

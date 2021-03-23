@@ -19,12 +19,14 @@ Note:
 - Use 0 when there is no digit (e.g., 36's 3rd digit is 0).
 - Can sort without comparison operators.
 
-See also:
-
-- [Radix sort](https://en.wikipedia.org/wiki/Radix_sort), Wikipedia.
-- [Radix Sort Algorithm Introduction in 5 Minutes](https://www.youtube.com/watch?v=XiuSW_mEn7g), YouTube.
-
+The complexity is O(wn), where w is the key length and n is the number of keys (e.g., n=10 and w=3 for three digits decimal numbers).
 
 #### Problem statement
 
 Sort a list of 5 three-digits numbers (0 to 999) using Radix sort. Do not use comparators.
+
+#### References
+
+- [Radix sort](https://en.wikipedia.org/wiki/Radix_sort), Wikipedia.
+- [Radix Sort Algorithm Introduction in 5 Minutes](https://www.youtube.com/watch?v=XiuSW_mEn7g), YouTube.
+

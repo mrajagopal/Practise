@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # 2021-03-15: Implementation of heap
+# 2021-03-21: Packaged random_array
 
 # Definition.
 # 1) A parent always have one or two children (binary tree)
@@ -9,16 +10,10 @@
 #
 # See also: https://medium.com/@yasufumy/data-structure-heap-ecfd0989e5be 
 
-import random
 import math
 import heapq
 import sys
-
-def random_array(max=9):
-    source = [i+1 for i in range(0, max)]
-    random.shuffle(source)                                     # In-place
-    return source
-
+import Utils
 
 # Heapify the sub-tree from the index i.
 # This operation guarantees that the i-th element is smallest in the tree (to the bottom)
@@ -78,11 +73,11 @@ def min_heap_sort(array):                                      # Assumed heapifi
 
 if __name__ == "__main__":
     try:
-        max = int(sys.argv[1])
+        n = int(sys.argv[1])
     except IndexError:
-        max = 2**5 - 1
+        n = 2**5 - 1
 
-    source = random_array(max)
+    source = Utils.random_array(n, n+1, True)
     print('Orig: %s' % source)
 
     heaped1 = source.copy()
