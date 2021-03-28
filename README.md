@@ -7,8 +7,7 @@
 - [Radix sort](./RadixSort/README.md) ... 2021-03-29
 - [Bubble sort](./BubbleSort/README.md) ... 2021-03-29
 - Binary search tree
-- Dobully linked tree
-- Link list
+- [Linked list and Doublly linked list](./LinkedList/README.md)
 - Skip list
 - Preventing loop
 - encryption algorithms (coding)

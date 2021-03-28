@@ -2,9 +2,6 @@
 # Bubble sort
 # 2021-03-23
 
-import math
-import sys
-import itertools
 import Utils                                                   # Satoshi's common functions
 
 def bubble_sort(arr):
