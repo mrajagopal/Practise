@@ -29,9 +29,7 @@ LinkedList::LinkedList()
 : head(nullptr),
   tail(nullptr),
   count(0)
-{
-  LinkedList::count++;
-}
+{}
 
 LinkedList::~LinkedList()
 {
@@ -41,6 +39,7 @@ LinkedList::~LinkedList()
     Node *next = n->next;
     delete(n);
     n = next;
+    count--;
   }
 }
 
@@ -73,7 +72,7 @@ bool LinkedList::remove(int v)
   if (head == nullptr)
     return false;
   
-  while(n != nullptr)                  // {1,2}
+  while(n != nullptr)
   {
     std::cout << "Node: " << n->value << std::endl;
     if (n->value == v)
@@ -84,6 +83,7 @@ bool LinkedList::remove(int v)
         delete(n);
         head = nullptr;
         tail = nullptr;
+        count--;
         return true;
       }
       
@@ -93,6 +93,7 @@ bool LinkedList::remove(int v)
         head = n->next;
         prev = n;
         delete(n);
+        count--;
         return true;
       }
       else
@@ -100,6 +101,7 @@ bool LinkedList::remove(int v)
         std::cout << "Middle" << std::endl;
         prev->next = n->next;
         delete(n);
+        count--;
         return true;
       }
     }
@@ -128,6 +130,7 @@ int LinkedList::getTail()
   return tail->value;
 }
 
+/* Test */
 int main()
 {
   int a[] = {1,2,3,4,5,6,7,8,9,10};
@@ -138,15 +141,21 @@ int main()
   }
 
   l.traverse();
-  std::cout << "Tail: " << l.getTail() << std::endl;
+  std::cout << "Size: " << l.size() << std::endl;
+
   l.remove(1);
   l.traverse();
+
   l.remove(2);
   l.traverse();
+
   l.remove(10);
   l.traverse();
+
   l.remove(5);
   l.traverse();
+  std::cout << "Size: " << l.size() << std::endl;
 
   return 0;
 }
+
