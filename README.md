@@ -6,11 +6,11 @@
 - [Heap sort](./HeapSort/README.md) ... 2021-03-22
 - [Radix sort](./RadixSort/README.md) ... 2021-03-29
 - [Bubble sort](./BubbleSort/README.md) ... 2021-03-29
+- [Linked list (single, doublly and circular)](./LinkedList/README.md) ... 2021-04-12
 - Binary search tree
-- [Linked list and Doublly linked list](./LinkedList/README.md)
 - Skip list
 - Preventing loop
-- encryption algorithms (coding)
+- Encryption algorithms (coding)
 - Stack
 - Removing duplicates using SET
 - Search in sorted & rotated array
