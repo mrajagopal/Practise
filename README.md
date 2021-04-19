@@ -16,6 +16,7 @@
 - Search in sorted & rotated array
 - Quick sort
 - [Sorted Square Array](./SortedSquareArray/README.md)
+- [Product of array except self](./ProductExceptSelf/README.md)
 
 ## Other codes
 
