@@ -2,25 +2,25 @@
 
 ## Data structure and Algorithm
 
-- [Detecting first and all non-repeating characters](./NonRepeating/README.md) ... 2021-03-22
-- [Heap sort](./HeapSort/README.md) ... 2021-03-22
-- [Radix sort](./RadixSort/README.md) ... 2021-03-29
-- [Bubble sort](./BubbleSort/README.md) ... 2021-03-29
-- [Linked list (single, doublly and circular)](./LinkedList/README.md) ... 2021-04-12, 2021-05-03
+- [Detecting first and all non-repeating characters](./NonRepeating/) ... 2021-03-22
+- [Heap sort](./HeapSort/) ... 2021-03-22
+- [Radix sort](./RadixSort/) ... 2021-03-29
+- [Bubble sort](./BubbleSort/) ... 2021-03-29
+- [Linked list (single, doublly and circular)](./LinkedList/) ... 2021-04-12, 2021-05-03
 - Binary search tree
 - Skip list
-- [Cycle detection](./CycleDetection/README.md)
+- [Cycle detection](./CycleDetection/)
 - Encryption algorithms (coding)
 - Stack
 - Removing duplicates using SET
 - Search in sorted & rotated array
 - Quick sort
-- [Sorted Square Array](./SortedSquareArray/README.md)
-- [Product of array except self](./ProductExceptSelf/README.md)
+- [Sorted Square Array](./SortedSquareArray/)
+- [Product of array except self](./ProductExceptSelf/)
 
 ## Other codes
 
-- [Utils](./Utils/README.md) - Utilities used in the above codes.
+- [Utils](./Utils/) - Utilities used in the above codes.
 
 ## References
 
