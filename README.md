@@ -9,14 +9,14 @@
 - [Linked list (single, doublly and circular)](./LinkedList/) ... 2021-04-12, 2021-05-03
 - Binary search tree
 - Skip list
-- [Cycle detection](./CycleDetection/)
+- [Cycle detection](./CycleDetection/) ... 2021-04-11
 - Encryption algorithms (coding)
 - Stack
 - Removing duplicates using SET
 - Search in sorted & rotated array
 - Quick sort
-- [Sorted Square Array](./SortedSquareArray/)
-- [Product of array except self](./ProductExceptSelf/)
+- [Sorted Square Array](./SortedSquareArray/) ... 2021-04-11
+- [Product of array except self](./ProductExceptSelf/) ... 2021-04-11
 
 ## Other codes
 
