@@ -17,6 +17,8 @@ public:
   void append(int v);
   bool remove(int v);
   void traverse();
+  bool insertBefore(int b, int v);
+  bool insertAfter(int a, int v);
   int getTail();
 
 private:
@@ -125,6 +127,55 @@ void LinkedList::traverse()
   std::cout << std::endl;
 }
 
+bool LinkedList::insertBefore(int b, int v)
+{
+  Node *n = head;
+  Node *prev = nullptr;
+  while (n != nullptr)
+  {
+    if (n->value == b)
+    {
+      Node *newNode = new Node(v);
+      newNode->next = n;
+      if (prev)
+        prev->next = newNode;
+      else
+        head = newNode;
+      
+      return true;
+    }
+    
+    prev = n;
+    n = n->next;
+  }
+  return false;
+}
+
+bool LinkedList::insertAfter(int a, int v)
+{
+  Node *n = head;
+  Node *prev = nullptr;
+  while (n != nullptr)
+  {
+    if (n->value == a)
+    {
+      Node *newNode = new Node(v);
+      newNode->next = n->next;
+      n->next = newNode;
+      if (prev)
+        prev->next = n;
+      
+      if (newNode->next == nullptr)
+        tail = newNode;
+      
+      return true;
+    }
+    prev = n;
+    n = n->next;
+  }
+  return false;
+}
+
 int LinkedList::getTail()
 {
   return tail->value;
@@ -155,6 +206,19 @@ int main()
   l.remove(5);
   l.traverse();
   std::cout << "Size: " << l.size() << std::endl;
+
+  l.insertBefore(4,11);
+  l.traverse();
+  l.insertAfter(6,12);
+  l.traverse();
+  l.insertBefore(3,13);
+  l.traverse();
+  l.insertAfter(9,14);
+  l.traverse();
+  l.insertAfter(14,100);
+  l.traverse();
+  l.insertBefore(100,105);
+  l.traverse();
 
   return 0;
 }
