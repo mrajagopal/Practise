@@ -14,6 +14,17 @@ Implement **Linked list**,  **Doublly linked list** and **Circular linked list**
 - Delete (the first element thatelement with a specified value)
 - Print (all the elements)
 
+
+#### Note
+
+LikedList Python editions
+
+- [LinkedList_v1.py](./LinkedList_v1.py): Practice version. Ignore.
+- [LinkedList_v2.py](./LinkedList_v2.py): Revised version. Made the search method to return elements count (for size()) and previous element of the element found (for delete()).
+- [LinkedList_Iter.py](./LinkedList_Iter.py): Python iteration version. The code is much neater!!
+
+
+
 #### References
 
 - [Linked List Data Structure](https://www.geeksforgeeks.org/data-structures/linked-list/), Geeks for Geeks.
