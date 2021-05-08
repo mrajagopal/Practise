@@ -21,6 +21,8 @@ public:
   bool remove(int v);
   void traverse();
   void rTraverse();
+  bool insertBefore(int b, int v);
+  bool insertAfter(int b, int v);
   
 private:
   Node *head;
@@ -91,6 +93,50 @@ void DoublyLinkedList::rTraverse()
   std::cout << std::endl;
 }
 
+bool DoublyLinkedList::insertBefore(int b, int v)
+{
+  Node *n = head;
+  while (n != nullptr)
+  {
+    if (n->value == b)
+    {
+      Node *newNode = new Node(v);
+      newNode->prev = n->prev;
+      n->prev = newNode;
+      newNode->next = n;
+      if (newNode->prev)
+      {
+        newNode->prev->next = newNode;
+      }
+      else // We are at the head
+      {
+        head = newNode;
+      }
+      return true;
+    }
+    n = n->next;
+  }
+  return false;
+}
+
+bool DoublyLinkedList::insertAfter(int a, int v)
+{
+  Node *n = head;
+  while (n != nullptr)
+  {
+    if (n->value == a)
+    {
+      Node *newNode = new Node(v);
+      newNode->prev = n;
+      newNode->next = n->next;
+      n->next = newNode;
+      return true;
+    }
+    n = n->next;
+  }
+  return false;
+}
+
 bool DoublyLinkedList::remove(int v)
 {
   Node *n = head;
@@ -154,6 +200,17 @@ int main()
   l.traverse();
 
   l.remove(5);
+  l.traverse();
+
+  l.insertBefore(4,11);
+  l.traverse();
+  l.insertAfter(6, 12);
+  l.traverse();
+  l.insertBefore(2,10);
+  l.traverse();
+  l.insertAfter(9, 100);
+  l.traverse();
+  l.insertBefore(100, 110);
   l.traverse();
 
   return 0;
