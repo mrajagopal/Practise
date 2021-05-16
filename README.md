@@ -15,7 +15,7 @@
 - Removing duplicates using SET
 - Search in sorted & rotated array
 - Quick sort
-- [Sorted Square Array](./SortedSquareArray/) ... 2021-05-11
+- [Sorted Square Array](./SortedSquareArray/) ... 2021-05-11, 2021-05-17, 2021-05-19
 - [Product of array except self](./ProductExceptSelf/) ... 2021-05-11
 
 ## Other codes
