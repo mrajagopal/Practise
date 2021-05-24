@@ -30,6 +30,7 @@ public:
   bool insertBefore(int b, int v);
   bool insertAfter(int a, int v);
   int getTail();
+  Node * getHead();
 
 private:
   Node *head;
