@@ -14,7 +14,6 @@
 // 7. Return the node in which they meet
 // 8. Else, if the hare reaches null, then return null
 
-//#include <iostream>
 #include "../LinkedList/LinkedList.hpp"
 
 Node* detectCycle(Node *head)
@@ -27,13 +26,15 @@ Node* detectCycle(Node *head)
 
   while (hare->next != nullptr && hare->next->next != nullptr)
   {
+    std::cout << "tortoise: " << tortoise->value << " hare: " << hare->value << std::endl;
     tortoise = tortoise->next;
-    hare = hare->next;
+    hare = hare->next->next;
     
-    if (tortoise == hare)
+    if (tortoise->value == hare->value)
     {
+      std::cout << "match: " << tortoise->value << std::endl;
       tortoise = head;
-      while (tortoise != hare)
+      while (tortoise->value != hare->value)
       {
         tortoise = tortoise->next;
         hare = hare->next;
@@ -50,12 +51,13 @@ int main()
   int v[] = {10, 20, 30, 50, 60, 70, 80, 50, 60, 70, 80, 50, 60, 70, 80};
   int size = sizeof(v)/sizeof(v[0]);
   LinkedList l;
+
   for (int i = 0; i < size; i++)
   {
-    l.append(a[i]);
+    l.append(v[i]);
   }
-  
-  if (detectCycle(l))
+  l.traverse();
+  if (detectCycle(l.getHead()))
   {
     std::cout << "Cycle found" << std::endl;
   }
@@ -63,7 +65,7 @@ int main()
   {
     std::cout << "No cycle found" << std::endl;
   }
-  
+
   return 0;
 }
 
