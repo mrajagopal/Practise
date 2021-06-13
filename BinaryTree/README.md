@@ -4,7 +4,7 @@
 
 ### About
 
-A [binary tree](https://en.wikipedia.org/wiki/Binary_tree) is a data structure in which each node has the left and right children. The node can be represented as:
+A [binary tree](https://en.wikipedia.org/wiki/Binary_tree) is a data structure in which each node has the left and/or right children. The node can be represented as:
 
 ```
 struct Node
@@ -13,6 +13,8 @@ struct Node
     Node *left, *right;
 };
 ```
+
+When the node does not have `*left` and `*right` children (e.g., `None` or `NULL`), it is called a *leaf*.
 
 ### Problem description
 
@@ -24,6 +26,7 @@ struct Node
 4. Write a routine to delete a Node.
 
 In this exercise, pick a traversal method of your choice. There are:
+
 - depth-first search (DFS)
     - inorder
     - preorder
