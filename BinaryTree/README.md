@@ -1,10 +1,14 @@
-# Binary Tree
+# Binary Search Tree
 
-2021-06-15
+2021-06-14
 
 ### About
 
-A [binary tree](https://en.wikipedia.org/wiki/Binary_tree) is a data structure in which each node has the left and/or right children. The node can be represented as:
+A [binary search tree (BST)](https://en.wikipedia.org/wiki/Binary_search_tree) in this exercise is:
+
+- A ordered (sorted) binary tree.
+- A node has left and/or right children nodes or no child node (*leaf* node).
+- Left child < Node < Right child
 
 ```
 struct Node
