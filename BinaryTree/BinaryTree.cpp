@@ -25,6 +25,40 @@ BSTNode * BST::findMin(BSTNode *node)
   return current;
 }
 
+void BST::traverseInOrder(BSTNode *node)
+{
+  if (node == nullptr)
+  {
+    return;
+  }
+  
+  traverseInOrder(node->left);
+  std::cout << node->data << " ";
+  traverseInOrder(node->right);
+}
+
+void BST::traversePreOrder(BSTNode *node)
+{
+  if (node == nullptr)
+  {
+    return;
+  }
+  
+  std::cout << node->data << " ";
+  traversePreOrder(node->left);
+  traversePreOrder(node->right);
+}
+
+void BST::traversePostOrder(BSTNode *node)
+{
+  if (node == nullptr)
+    return;
+  
+  traversePostOrder(node->left);
+  traversePostOrder(node->right);
+  std::cout << node->data << " ";
+}
+
 void BST::remove(BSTNode *node, int d)
 {
   if (node == nullptr)
@@ -104,7 +138,14 @@ int main()
   BST b;
   root = b.insert(root, 45);
   (void) b.insert(root, 25);
+  (void) b.insert(root, 100);
+  (void) b.insert(root, 1);
+  (void) b.insert(root, 10);
+  (void) b.insert(root, 200);
+  (void) b.insert(root, 1000);
+  (void) b.insert(root, 400);
   printBST(root);
+  b.traverseInOrder(root);
   
   return 0;
 }
