@@ -33,6 +33,9 @@ public:
   void remove(BSTNode *node, int d);
   void erase(BSTNode *node);
   BSTNode * findMin(BSTNode *node);
+  void traverseInOrder(BSTNode *node);
+  void traversePreOrder(BSTNode *node);
+  void traversePostOrder(BSTNode *node);
   BSTNode *root;
 };
 
