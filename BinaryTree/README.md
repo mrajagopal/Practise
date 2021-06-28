@@ -14,7 +14,7 @@ A [binary search tree (BST)](https://en.wikipedia.org/wiki/Binary_search_tree) i
 struct Node
 {
     int data;
-    Node *left, *right;
+    Node *left, *right;                                       // NULL for no-child
 };
 ```
 
@@ -25,17 +25,20 @@ When a node does not have `*left` and `*right` children (e.g., `None` or `NULL`)
 ![Binary tree sample](./BinaryTreeSample.png) ![Binary tree sample in JSON format](./BinaryTreeSampleJson.png)
 
 1. Represent the above tree in a code.
-2. Write a routine to traverse the tree (see below for traversal methods).
+2. Write a routine to traverse the tree. There are a various methods as below. Implement any/all of them.
+    - *Depth-first search* (DFS): Go deeper first.
+        - *Pre-order*: Print the node upon first visit. A list of the serialized values retains the structure of the tree. e.g., `15 10 8 12 20 16 25`
+        - *In-order*: Print the node upon second visit. A list is sorted when the left nodes are visited firrst . e.g., `8 10 12 15 16 20 25`. When the right nodes are visisted first, the list becomes descenging.
+        - *Post-order*: Print the node upon the last (third) visit. Order to delete the tree from the leafs first. e.g., `8 12 10 16 25 20 15` (to delete 10, you need to delete 8, 12 then 10).
+    - *Breadth-first search* (BFS): Print the nodes from left to right, top to bottom. e.g., `15 10 20 8 12 16 25`
 3. Write a routine to insert a Node.
 4. Write a routine to delete a Node.
+    - When the target node does not have child: Remove the node.
+    - When the target node has only one child: Replace the node with the child.
+    - When the targer node has both children: Replace the node with the next node that follows in in-order search (the next larger node)
 
 In this exercise, pick a traversal method of your choice. There are:
 
-- depth-first search (DFS)
-    - Pre-order: Print the node upon first visit. A serialized values retains the structure of the tree. e.g., `15 10 8 12 20 16 25`
-    - In-order: Print the node upon second visit. Values are sorderd. e.g., `8 10 12 15 16 20 25` (note: it becomes descenging by visiting the right node first instead of left)
-    - Post-order: Print the node upon the last (third) visit. Order to delete the tree from the leafs first. e.g., `8 12 10 16 25 20 15`
-- breadth-first search (BFS): Print the nodes from left to right, top to bottom. e.g., `15 10 20 8 12 16 25`
 
 ### References
 
