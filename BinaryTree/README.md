@@ -1,6 +1,6 @@
 # Binary Search Tree
 
-2021-06-14, 2021-06-22
+2021-06-14, 2021-06-22, 2021-06-29
 
 ### About
 
@@ -32,12 +32,18 @@ When a node does not have `*left` and `*right` children (e.g., `None` or `NULL`)
         - *Post-order*: Print the node upon the last (third) visit. Order to delete the tree from the leafs first. e.g., `8 12 10 16 25 20 15` (to delete 10, you need to delete 8, 12 then 10).
     - *Breadth-first search* (BFS): Print the nodes from left to right, top to bottom. e.g., `15 10 20 8 12 16 25`
 3. Write a routine to insert a Node.
+    - Traverse the tree
+        - If the new node's value < node value, traverse to the Left.
+            - If there is no left child, add the new node to the left.
+            - Otherwise recursively traverse
+        - If the new node's value > node value, traverse to the Right.
+            - If there is no right child, add the new node to the right.
+            - Otherwise recursively traverse
+        - If the new node's value == node value, exit (assuming the nodes are unique).
 4. Write a routine to delete a Node.
     - When the target node does not have child: Remove the node.
     - When the target node has only one child: Replace the node with the child.
     - When the targer node has both children: Replace the node with the next node that follows in in-order search (the next larger node)
-
-In this exercise, pick a traversal method of your choice. There are:
 
 
 ### References
