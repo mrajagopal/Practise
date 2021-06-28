@@ -7,9 +7,9 @@
 - [Radix sort](./RadixSort/) ... 2021-03-29
 - [Bubble sort](./BubbleSort/) ... 2021-03-29
 - [Linked list (single, doublly and circular)](./LinkedList/) ... 2021-04-12, 2021-05-03
+- [Cycle detection](./CycleDetection/) ... 2021-05-11, 2021-05-17, 2021-05-19
 - [Binary tree](./BinaryTree) ... 2021-06-14, 2021-06-22, 2021-06-29
 - Skip list
-- [Cycle detection](./CycleDetection/) ... 2021-05-11, 2021-05-17, 2021-05-19
 - Encryption algorithms (coding)
 - Stack
 - Removing duplicates using SET
