@@ -16,6 +16,14 @@ BST::~BST()
   erase(root);
 }
 
+int BST::size(BSTNode *node)
+{
+  if (node == nullptr)
+    return 0;
+  
+  return (size(node->left) + 1 + size(node->right));
+}
+
 BSTNode * BST::findMin(BSTNode *node)
 {
   BSTNode *current = node;
@@ -131,6 +139,45 @@ void printBST(BSTNode *node)
   printBST(node->right);
 }
 
+int BST::height(BSTNode *node)
+{
+  while (node == nullptr)
+    return 0;
+  
+  int lheight = height(node->left);
+  int rheight = height(node->right);
+  
+  if (lheight > rheight)
+    return (lheight + 1);
+  else
+    return (rheight + 1);
+}
+
+void BST::levelOrderTraverse(BSTNode *node)
+{
+  int h = height(node);
+  std::cout << "Height of BST is " << h << std::endl;
+  
+  for (int i = 0; i <= h; i++)
+    printCurrentLevel(node, i);
+}
+
+void BST::printCurrentLevel(BSTNode *node, int level)
+{
+  if (node == nullptr)
+    return;
+  
+  if (level == 1)
+  {
+    std::cout << node->data << " ";
+  }
+  else if (level > 1)
+  {
+    printCurrentLevel(node->left, level - 1);
+    printCurrentLevel(node->right, level - 1);
+  }
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};
@@ -146,6 +193,8 @@ int main()
   (void) b.insert(root, 400);
   printBST(root);
   b.traverseInOrder(root);
-  
+  std::cout << std::endl;
+  std::cout << "The size of the binary tree is " << b.size(root) << std::endl;
+  b.levelOrderTraverse(root);
   return 0;
 }
