@@ -9,7 +9,7 @@ def ssa(arr):
     neg_index = 0                                        # Read the negative values from left
     pos_index = len(arr) - 1                             # Read the positive values from right
 
-    while neg_index <= pos_index:
+    while neg_index <= pos_index:                        # O(N)
         # Select the larger abs number
         if abs(arr[neg_index]) < abs(arr[pos_index]):
             target = arr[pos_index]
@@ -19,7 +19,7 @@ def ssa(arr):
             neg_index += 1
         ret.append(target ** 2)
 
-    ret.reverse()
+    ret.reverse()                                        # O(2N)
     return ret
 
 
@@ -32,7 +32,7 @@ def ssa_orig(arr):
     pos_index = len(arr) - 1
     ret_index = len(ret) - 1
 
-    while neg_index <= pos_index:
+    while neg_index <= pos_index:                        # Just O(N)!
         # select the larger number (same here)
         if abs(arr[neg_index]) < abs(arr[pos_index]):
             target = arr[pos_index]
