@@ -62,3 +62,5 @@ When a node does not have `*left` and `*right` children (e.g., `None` or `NULL`)
 - [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal), Wikipedia.
 - [Breadth-first traversal](https://en.wikipedia.org/wiki/Breadth-first_search), Wikipedia.
 - [Simplest Binary Tree Traversal trick for preorder inorder postorder](https://www.youtube.com/watch?v=WLvU5EQVZqY), YouTube, 2019 (7'14")
+- [Binary search tree](https://isaaccomputerscience.org/concepts/dsa_search_bst), issac computer science (U Cambridge).
+- [Height of a Balanced Tree](https://www.baeldung.com/cs/height-balanced-tree), Baeldung.
