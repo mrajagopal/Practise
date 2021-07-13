@@ -7,6 +7,12 @@
 
 #include "BinaryTree.hpp"
 
+void debugLog(std::string &s, bool debug)
+{
+  if (debug)
+    std::cout << s << std::endl;
+}
+
 BST::BST()
  : root(nullptr)
 {}
@@ -67,38 +73,97 @@ void BST::traversePostOrder(BSTNode *node)
   std::cout << node->data << " ";
 }
 
+BSTNode * BST::getParent(BSTNode *node, int d)
+{
+  BSTNode *parent = nullptr;
+  while (node != nullptr && node->data != d)
+  {
+    parent = node;
+    if (node->data > d)
+      node = node->left;
+    else
+      node = node->right;
+  }
+  return parent;
+}
+
 void BST::remove(BSTNode *node, int d)
 {
-  if (node == nullptr)
+  BSTNode *parent = getParent(root, d);
+  if (parent == nullptr)
+  {
+    std::cout << "Error: Item not found in tree" << std::endl;
     return;
-  
-  if (node->data > d)
-    remove(node->left, d);
-  else if (node->data < d)
-    remove(node->right, d);
+  }
   else
   {
-    if (node->left == nullptr)
-    {
-      BSTNode *n = node->right;
-      delete(node);
-      return;
-    }
-    else if (node->right == nullptr)
-    {
-      BSTNode *n = node->left;
-      delete node;
-      return;
-    }
-    struct BSTNode* temp = findMin(node->right);
-     
-      // Copy the inorder
-      // successor's content to this node
-      node->data = temp->data;
-
-      // Delete the inorder successor
-      remove(node->right, temp->data);
   }
+  
+  if (node == nullptr)
+  {
+    std::cout << "Error: Tree is empty" << std::endl;
+    return;
+  }
+  
+  
+  // Traverse down the left of tree
+  if (node->data > d)
+  {
+    remove(node->left, d);
+  }
+  // Traverse down the right of tree
+  else if (node->data < d)
+  {
+    remove(node->right, d);
+  }
+  // At desired node to be deleted
+  else
+  {
+    // Node to be deleted does not have a left subtree
+    if ((node->left == nullptr) && (node->right != nullptr))
+    {
+      std::cout << "Node to be deleted does not have a left subtree" << std::endl;
+      BSTNode *n = node->right;
+      std::cout << node->data << " deleting" << std::endl;
+      node->data = n->data;
+      node->left = n->left;
+      node->right = n->right;
+      delete(n);
+    }
+    // Node to be deleted does not have a right subtree
+    else if ((node->left != nullptr) && (node->right == nullptr))
+    {
+      std::cout << "Node to be deleted does not have a right subtree" << std::endl;
+      BSTNode *n = node->left;
+      node->data = n->data;
+      node->left = n->left;
+      node->right = n->right;
+      delete(node->left);
+    }
+    // Node to be deleted is a leaf
+    else if ((node->left == nullptr) && (node->right == nullptr))
+    {
+      std::cout << "Node to be deleted is a leaf" << std::endl;
+      if (parent->left == node)
+      {
+        parent->left = nullptr;
+        delete(node);
+      }
+      else
+      {
+        parent->right = nullptr;
+        delete(node);
+      }
+    }
+    // Node has both left and right subtrees
+    else
+    {
+      BSTNode *successor = findMin(node->right);
+      node->data = successor->data;
+      remove(root, successor->data);
+    }
+  }
+  return;
 }
 
 BSTNode * BST::insert(BSTNode *node, int d)
@@ -107,6 +172,8 @@ BSTNode * BST::insert(BSTNode *node, int d)
   {
     std::cout << "New node: " << d << std::endl;
     node = new BSTNode(d);
+    if (root == nullptr)
+      root = node;
   }
   else if (d > node->data)
   {
@@ -129,14 +196,34 @@ void BST::erase(BSTNode *node)
   delete node;
 }
 
-void printBST(BSTNode *node)
+void BST::printBSTPreOrder(BSTNode *node)
 {
   if (node == nullptr)
     return;
   
   std::cout << node->data << std::endl;
-  printBST(node->left);
-  printBST(node->right);
+  printBSTPreOrder(node->left);
+  printBSTPreOrder(node->right);
+}
+
+void BST::printBSTInOrder(BSTNode *node)
+{
+  if (node == nullptr)
+    return;
+  
+  printBSTInOrder(node->left);
+  std::cout << node->data << std::endl;
+  printBSTInOrder(node->right);
+}
+
+void BST::printBSTPostOrder(BSTNode *node)
+{
+  if (node == nullptr)
+    return;
+  
+  printBSTPostOrder(node->left);
+  printBSTPostOrder(node->right);
+  std::cout << node->data << std::endl;
 }
 
 int BST::height(BSTNode *node)
@@ -178,6 +265,11 @@ void BST::printCurrentLevel(BSTNode *node, int level)
   }
 }
 
+BSTNode * BST::getRoot()
+{
+  return root;
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};
@@ -191,7 +283,16 @@ int main()
   (void) b.insert(root, 200);
   (void) b.insert(root, 1000);
   (void) b.insert(root, 400);
-  printBST(root);
+  (void) b.insert(root, -5);
+  (void) b.insert(root, 5);
+  b.printBSTInOrder(root);
+  (void) b.remove(root, -5);
+  b.printBSTInOrder(root);
+  (void) b.remove(root, 1000);
+  b.printBSTInOrder(root);
+  (void) b.remove(root, 400);
+  b.printBSTInOrder(root);
+
   b.traverseInOrder(root);
   std::cout << std::endl;
   std::cout << "The size of the binary tree is " << b.size(root) << std::endl;

@@ -40,6 +40,12 @@ public:
   void traverseInOrder(BSTNode *node);
   void traversePreOrder(BSTNode *node);
   void traversePostOrder(BSTNode *node);
+  void printBSTPreOrder(BSTNode *node);
+  void printBSTInOrder(BSTNode *node);
+  void printBSTPostOrder(BSTNode *node);
+  BSTNode * getParent(BSTNode *node, int d);
+  BSTNode * getRoot();
+//private:
   BSTNode *root;
 };
 
