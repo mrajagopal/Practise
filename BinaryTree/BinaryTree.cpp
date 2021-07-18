@@ -243,7 +243,7 @@ int BST::height(BSTNode *node)
 void BST::levelOrderTraverse(BSTNode *node)
 {
   int h = height(node);
-  std::cout << "Height of BST is " << h << std::endl;
+//  std::cout << "Height of BST is " << h << std::endl;
   
   for (int i = 0; i <= h; i++)
     printCurrentLevel(node, i);
@@ -270,6 +270,22 @@ BSTNode * BST::getRoot()
   return root;
 }
 
+bool BST::isBalanced(BSTNode *root)
+{
+  if (root == nullptr)
+    return true;
+  
+  int lh = height(root->left);
+  int rh = height(root->right);
+  
+  if (abs(lh - rh) > 1)
+    return false;
+  else if (!isBalanced(root->left) || !isBalanced(root->right))
+    return false;
+  
+  return true;
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};
@@ -286,16 +302,24 @@ int main()
   (void) b.insert(root, -5);
   (void) b.insert(root, 5);
   b.printBSTInOrder(root);
+  std::cout << "The tree is " << (b.isBalanced(root) ? "balanced" : "unbalanced") << std::endl;
   (void) b.remove(root, -5);
   b.printBSTInOrder(root);
   (void) b.remove(root, 1000);
   b.printBSTInOrder(root);
   (void) b.remove(root, 400);
   b.printBSTInOrder(root);
-
+  (void) b.remove(root, 5);
+  b.printBSTInOrder(root);
+  
   b.traverseInOrder(root);
+  int h = b.height(root);
+  std::cout << "Height of BST is " << h << std::endl;
+  
   std::cout << std::endl;
   std::cout << "The size of the binary tree is " << b.size(root) << std::endl;
   b.levelOrderTraverse(root);
+  
+  std::cout << "The tree is " << (b.isBalanced(root) ? "balanced" : "unbalanced") << std::endl;
   return 0;
 }

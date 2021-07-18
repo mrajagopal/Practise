@@ -45,6 +45,7 @@ public:
   void printBSTPostOrder(BSTNode *node);
   BSTNode * getParent(BSTNode *node, int d);
   BSTNode * getRoot();
+  bool isBalanced(BSTNode *root);
 //private:
   BSTNode *root;
 };
