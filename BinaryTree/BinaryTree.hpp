@@ -46,6 +46,7 @@ public:
   BSTNode * getParent(BSTNode *node, int d);
   BSTNode * getRoot();
   bool isBalanced(BSTNode *root);
+  bool isValidBST(BSTNode *root);
 //private:
   BSTNode *root;
 };

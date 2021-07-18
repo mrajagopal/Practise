@@ -286,6 +286,25 @@ bool BST::isBalanced(BSTNode *root)
   return true;
 }
 
+bool BST::isValidBST(BSTNode *root)
+{
+  if (root == nullptr)
+    return true;
+  
+  BSTNode *l = root->left;
+  BSTNode *r = root->right;
+  if (l && (root->data < l->data))
+    return false;
+      
+  if (r && (root->data > r->data))
+    return false;
+
+  if (isValidBST(root->left) && isValidBST(root->right))
+    return true;
+  
+  return false;
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};
@@ -321,5 +340,6 @@ int main()
   b.levelOrderTraverse(root);
   
   std::cout << "The tree is " << (b.isBalanced(root) ? "balanced" : "unbalanced") << std::endl;
+  std::cout << "The tree is " << (b.isValidBST(root) ? "a valid BST" : "not a valid BST") << std::endl;
   return 0;
 }
