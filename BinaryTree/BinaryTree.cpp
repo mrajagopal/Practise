@@ -288,21 +288,27 @@ bool BST::isBalanced(BSTNode *root)
 
 bool BST::isValidBST(BSTNode *root)
 {
-  if (root == nullptr)
-    return true;
-  
-  BSTNode *l = root->left;
-  BSTNode *r = root->right;
-  if (l && (root->data < l->data))
-    return false;
-      
-  if (r && (root->data > r->data))
-    return false;
+  return isValidBSTVerify(nullptr, root, nullptr);
+}
 
-  if (isValidBST(root->left) && isValidBST(root->right))
+bool BST::isValidBSTVerify(BSTNode *lower, BSTNode *node, BSTNode *upper)
+{
+  if (node == nullptr)
     return true;
   
-  return false;
+  if (upper != nullptr && node->data >= upper->data)
+    return false;
+  
+  if (lower != nullptr && node->data <= lower->data)
+    return false;
+  
+  if (!isValidBSTVerify(lower, node->left, node))
+    return false;
+  
+  if (!isValidBSTVerify(node, node->right, upper))
+    return false;
+  
+  return true;
 }
 
 int main()
