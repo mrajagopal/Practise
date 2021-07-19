@@ -291,21 +291,21 @@ bool BST::isValidBST(BSTNode *root)
   return isValidBSTVerify(nullptr, root, nullptr);
 }
 
-bool BST::isValidBSTVerify(BSTNode *lower, BSTNode *node, BSTNode *upper)
+bool BST::isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBound)
 {
   if (node == nullptr)
     return true;
   
-  if (upper != nullptr && node->data >= upper->data)
+  if (upperBound != nullptr && node->data >= upperBound->data)
     return false;
   
-  if (lower != nullptr && node->data <= lower->data)
+  if (lowerBound != nullptr && node->data <= lowerBound->data)
     return false;
   
-  if (!isValidBSTVerify(lower, node->left, node))
+  if (!isValidBSTVerify(lowerBound, node->left, node))
     return false;
   
-  if (!isValidBSTVerify(node, node->right, upper))
+  if (!isValidBSTVerify(node, node->right, upperBound))
     return false;
   
   return true;

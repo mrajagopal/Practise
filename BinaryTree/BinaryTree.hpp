@@ -49,7 +49,7 @@ public:
   bool isValidBST(BSTNode *root);
 private:
   BSTNode *root;
-  bool isValidBSTVerify(BSTNode *lower, BSTNode *node, BSTNode *upper);
+  bool isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBound);
 };
 
 #endif /* BinaryTree_hpp */
