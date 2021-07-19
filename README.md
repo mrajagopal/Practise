@@ -5,8 +5,8 @@
 ### Data structure
 
 - [Linked list (single, doublly and circular)](./LinkedList/) ... 2021-04-12, 2021-05-03
-- [Binary tree](./BinaryTree) ... 2021-06-14, 2021-06-22, 2021-06-29
-- Skip list
+- [Binary tree](./BinaryTree) ... 2021-06-14, 2021-06-22, 2021-06-29, 2021-07-06, 2021-07-19
+- [Skip list](./SkipList) ... 2021-08-02
 - Stack
 - Search in sorted & rotated array
 
