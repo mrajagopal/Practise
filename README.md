@@ -19,7 +19,11 @@
 
 ### Cryptography
 
+For fun, read [Understanding encryption](https://www.digicert.com/resources/history-of-ciphers-understanding-encryption-whitepaper-en-2019.pdf) by Digicert (2019), a brief history of cryptography. [A slightly different edition](https://www.digicert.co.jp/welcome/pdf/wp_encryption_history.pdf) from Symantec (2014) is also available but only in Japanese.
+
+- Ceaser cipher (just for fun)
 - Hash (MD5, HMAC)
+
 
 ### Miscellaneous algorithms
 
