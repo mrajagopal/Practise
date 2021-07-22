@@ -325,6 +325,28 @@ bool BST::isPerfect(BSTNode *n)
   return (isPerfect(n->left) && isPerfect(n->right));
 }
 
+//Check if the binary tree is strict.
+//A binary tree is strict if all its non-leaf nodes have both the left and right child nodes.
+//
+//Returns:  True if the binary tree is strict, False otherwise.
+//Return type:  bool
+bool BST::isStrict(BSTNode *n)
+{
+  if (n == nullptr)
+    return false;
+  
+  // this is a leaf
+  if (n->left == nullptr && n->right == nullptr)
+    return true;
+  
+  // both leafs present, hence traverse down tree
+  if (n->left && n->right)
+    return (isStrict(n->left) && isStrict(n->right));
+  
+  // Not strict as either right or left leaf is absent
+  return false;
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};

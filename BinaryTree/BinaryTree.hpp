@@ -48,6 +48,7 @@ public:
   bool isBalanced(BSTNode *root);
   bool isValidBST(BSTNode *root);
   bool isPerfect(BSTNode *root);
+  bool isStrict(BSTNode *n);
 private:
   BSTNode *root;
   bool isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBound);
