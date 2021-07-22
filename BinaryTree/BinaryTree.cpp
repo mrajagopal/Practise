@@ -253,7 +253,7 @@ void BST::printCurrentLevel(BSTNode *node, int level)
 {
   if (node == nullptr)
     return;
-  
+//  std::cout << "level: " << level << std::endl;
   if (level == 1)
   {
     std::cout << node->data << " ";
@@ -311,6 +311,20 @@ bool BST::isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBou
   return true;
 }
 
+bool BST::isPerfect(BSTNode *n)
+{
+  if (n == nullptr)
+  {
+    std::cout << "node is null" << std::endl;
+    return true;
+  }
+
+  if ((n->left == nullptr) && (n->right == nullptr))
+    return true;
+
+  return (isPerfect(n->left) && isPerfect(n->right));
+}
+
 int main()
 {
 //  int v[] = {1,2,3,4,5,6,7,8};
@@ -347,5 +361,19 @@ int main()
   
   std::cout << "The tree is " << (b.isBalanced(root) ? "balanced" : "unbalanced") << std::endl;
   std::cout << "The tree is " << (b.isValidBST(root) ? "a valid BST" : "not a valid BST") << std::endl;
+  
+  BST a;
+  BSTNode *roota = nullptr;
+//  [1,2,3,4,5,6]
+  roota = a.insert(roota, 1);
+  (void) a.insert(roota, 2);
+  (void) a.insert(roota, 3);
+  (void) a.insert(roota, 4);
+  (void) a.insert(roota, 5);
+  (void) a.insert(roota, 6);
+  (void) a.insert(roota, 7);
+  
+  std::cout << "The tree is " << (a.isPerfect(roota) ? "perfect" : "not perfect") << std::endl;
+  a.levelOrderTraverse(roota);
   return 0;
 }
