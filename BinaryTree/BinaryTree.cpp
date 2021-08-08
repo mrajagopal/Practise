@@ -253,7 +253,7 @@ void BST::printCurrentLevel(BSTNode *node, int level)
 {
   if (node == nullptr)
     return;
-  
+//  std::cout << "level: " << level << std::endl;
   if (level == 1)
   {
     std::cout << node->data << " ";
@@ -291,24 +291,60 @@ bool BST::isValidBST(BSTNode *root)
   return isValidBSTVerify(nullptr, root, nullptr);
 }
 
-bool BST::isValidBSTVerify(BSTNode *lower, BSTNode *node, BSTNode *upper)
+bool BST::isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBound)
 {
   if (node == nullptr)
     return true;
   
-  if (upper != nullptr && node->data >= upper->data)
+  if (upperBound != nullptr && node->data >= upperBound->data)
     return false;
   
-  if (lower != nullptr && node->data <= lower->data)
+  if (lowerBound != nullptr && node->data <= lowerBound->data)
     return false;
   
-  if (!isValidBSTVerify(lower, node->left, node))
+  if (!isValidBSTVerify(lowerBound, node->left, node))
     return false;
   
-  if (!isValidBSTVerify(node, node->right, upper))
+  if (!isValidBSTVerify(node, node->right, upperBound))
     return false;
   
   return true;
+}
+
+bool BST::isPerfect(BSTNode *n)
+{
+  if (n == nullptr)
+  {
+    std::cout << "node is null" << std::endl;
+    return true;
+  }
+
+  if ((n->left == nullptr) && (n->right == nullptr))
+    return true;
+
+  return (isPerfect(n->left) && isPerfect(n->right));
+}
+
+//Check if the binary tree is strict.
+//A binary tree is strict if all its non-leaf nodes have both the left and right child nodes.
+//
+//Returns:  True if the binary tree is strict, False otherwise.
+//Return type:  bool
+bool BST::isStrict(BSTNode *n)
+{
+  if (n == nullptr)
+    return false;
+  
+  // this is a leaf
+  if (n->left == nullptr && n->right == nullptr)
+    return true;
+  
+  // both leafs present, hence traverse down tree
+  if (n->left && n->right)
+    return (isStrict(n->left) && isStrict(n->right));
+  
+  // Not strict as either right or left leaf is absent
+  return false;
 }
 
 int main()
@@ -347,5 +383,19 @@ int main()
   
   std::cout << "The tree is " << (b.isBalanced(root) ? "balanced" : "unbalanced") << std::endl;
   std::cout << "The tree is " << (b.isValidBST(root) ? "a valid BST" : "not a valid BST") << std::endl;
+  
+  BST a;
+  BSTNode *roota = nullptr;
+//  [1,2,3,4,5,6]
+  roota = a.insert(roota, 1);
+  (void) a.insert(roota, 2);
+  (void) a.insert(roota, 3);
+  (void) a.insert(roota, 4);
+  (void) a.insert(roota, 5);
+  (void) a.insert(roota, 6);
+  (void) a.insert(roota, 7);
+  
+  std::cout << "The tree is " << (a.isPerfect(roota) ? "perfect" : "not perfect") << std::endl;
+  a.levelOrderTraverse(roota);
   return 0;
 }

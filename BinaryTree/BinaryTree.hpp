@@ -47,9 +47,11 @@ public:
   BSTNode * getRoot();
   bool isBalanced(BSTNode *root);
   bool isValidBST(BSTNode *root);
+  bool isPerfect(BSTNode *root);
+  bool isStrict(BSTNode *n);
 private:
   BSTNode *root;
-  bool isValidBSTVerify(BSTNode *lower, BSTNode *node, BSTNode *upper);
+  bool isValidBSTVerify(BSTNode *lowerBound, BSTNode *node, BSTNode *upperBound);
 };
 
 #endif /* BinaryTree_hpp */
