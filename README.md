@@ -6,7 +6,7 @@
 
 - [Linked list (single, doublly and circular)](./LinkedList/) ... 2021-04-12, 2021-05-03
 - [Binary tree](./BinaryTree) ... 2021-06-14, 2021-06-22, 2021-06-29, 2021-07-06, 2021-07-19
-- [Skip list](./SkipList) ... 2021-08-02
+- [Skip list](./SkipList) ... 2021-08-02, 2021-08-16, 2021-08-30
 - Stack
 - Search in sorted & rotated array
 
@@ -22,7 +22,7 @@
 For fun, read [Understanding encryption](https://www.digicert.com/resources/history-of-ciphers-understanding-encryption-whitepaper-en-2019.pdf) by Digicert (2019), a brief history of cryptography. [A slightly different edition](https://www.digicert.co.jp/welcome/pdf/wp_encryption_history.pdf) from Symantec (2014) is also available but only in Japanese.
 
 - Ceaser cipher (just for fun)
-- Hash (MD5, HMAC)
+- [Hash](./Hash) (MD5, HMAC) ... 2021-09-06
 
 
 ### Miscellaneous algorithms
