@@ -13,14 +13,16 @@
 class MD5
 {
 public:
-  md5();
-  ~md5();
+  MD5();
+  ~MD5();
+  std::string hexdigest() const;
+  MD5& finalize();
+  void update(const unsigned char input[], int32_t length);
+  void update(const char input[], uint8_t length);
   
 private:
-  uint32_t a0;
-  uint32_t b0;
-  uint32_t c0;
-  uint32_t d0;
+  bool finalized;
+  uint32_t state[4];
   uint8_t digest[16];
   uint32_t count[2];
   const static int blocksize = 64;
@@ -34,6 +36,13 @@ private:
   void GG(uint32_t &a, uint32_t b, uint32_t c, uint32_t d, uint32_t x, uint32_t s, uint32_t ac);
   void HH(uint32_t &a, uint32_t b, uint32_t c, uint32_t d, uint32_t x, uint32_t s, uint32_t ac);
   void II(uint32_t &a, uint32_t b, uint32_t c, uint32_t d, uint32_t x, uint32_t s, uint32_t ac);
-}
+  uint32_t rotateLeft(uint32_t x, uint32_t n);
+  void transform(const uint8_t block[blocksize]);
+
+  void decode(uint32_t output[], const uint8_t input[], uint32_t len);
+  void encode(uint8_t output[], const uint32_t input[], uint32_t len);
+
+//  std::string md5(const std::string str);
+};
 
 #endif /* md5_hpp */
