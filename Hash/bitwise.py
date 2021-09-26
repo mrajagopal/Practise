@@ -4,6 +4,11 @@
 
 import sys
 
+'''
+Section 2, RFC 1321: 
+- Each consecutive group of eight bits is interpreted as a byte with the high-order (most significant) bit of each byte listed first.
+- Each consecutive group of four bytes is interpreted as a word with the low-order (least significant) byte given first.
+'''
 
 def bitwise_string(b_array):
     '''
