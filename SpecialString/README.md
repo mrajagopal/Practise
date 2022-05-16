@@ -2,6 +2,10 @@
 
 The problem is from Hacker Rank: [Prepare 》 Interview Preparation Kit 》 String Manipulation 》 Special String Again](https://www.hackerrank.com/challenges/special-palindrome-again).
 
+> The problem is similar to a palindromic substring problem. You can find the longest parlindromic substring in O(n) (note: brute force requires O(n<sup>3</sup>)) using Manacher Algorithm.
+
+> See [Longest Palindromic Substring Manacher's Algorithm](https://www.youtube.com/watch?v=V-sEwsca1ak&list=TLGGXo13HEoYJ34xNjA1MjAyMg&ab_channel=TusharRoy-CodingMadeSimple) (YouTube)
+
 ## Problem
 
 A string is said to be a special string if either of two conditions is met:
